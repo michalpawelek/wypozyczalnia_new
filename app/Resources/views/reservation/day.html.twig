@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>Rezerwacja w dniu {{ date|date('d/m/Y') }}</div>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button>Rezerwuj!!</button>
+    {{ form_end(form) }}
+{% endblock %}

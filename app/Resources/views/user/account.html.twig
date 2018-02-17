@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        Witaj {{ uzytkownik.login }}
+    </div>
+    <div>
+        Twoje dane:
+    </div>
+    <ul>
+        <li>Login: {{ uzytkownik.login }}</li>
+        <li>Imie: {{ uzytkownik.imie }}</li>
+        <li>Nazwisko: {{ uzytkownik.nazwisko }}</li>
+        <li>Nr telefonu: {{ uzytkownik.telefon }}</li>
+        <li>Email: {{ uzytkownik.email }}</li>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('admin_index') }}">Panel admina</a>
+        {% endif %}
+        <a href="{{ path('user_reservation') }}">Moje Rezerwacje</a>
+    </ul>
+    <div>
+        Wyloguj się: <a href="{{ path('security_logout') }}" class="btn btn-primary">Klik!</a>
+    </div>
+{% endblock %}

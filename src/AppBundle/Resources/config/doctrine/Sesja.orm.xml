@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Sesja" table="sesja">
+    <indexes>
+      <index name="id_uzytkownicy" columns="id_uzytkownik"/>
+    </indexes>
+    <id name="idSesja" type="string" column="id_sesja" length="60">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ip" type="string" column="ip" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idUzytkownik" target-entity="Uzytkownicy" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_uzytkownik" referenced-column-name="id_uzytkownik"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

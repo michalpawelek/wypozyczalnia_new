@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dziekujemy za rezerwacje w dniu {{ reservations[0].data_wypozyczenia|date('d/m/Y') }}</h1>
+    <div>Rezerwacje godzinowe:</div>
+
+
+    {% for reservation in reservations %}
+        <br/>
+        <div>
+            <div>#{{ loop.index }}</div>
+            <div>Godzina wypożyczenia: {{ reservation.data_wypozyczenia|date('H') }}:00</div>
+            <div>Godzina oddania: {{ reservation.data_oddania|date('H') }}:00</div>
+        </div>
+        <br/>
+    {% endfor %}
+
+    <div>Całkowity koszt rezerwacj: {{ cash }}zł</div>
+
+    <a href="{{ path('user_account') }}">Powrót do konta</a>
+{% endblock %}

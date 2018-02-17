@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Boiska</h1>
+    <ul>
+        {% for field in fields %}
+        <li>
+            <p>Typ boiska: {{ field.typ }}</p>
+            <p>Adres: {{ field.miejscowosc}}, ul {{ field.ulica }} {{ field.numer }}</p>
+            <p>Cena/h: {{ field.cenaGodzina }}zł</p>
+            <a href="{{ path('reservation_field', { 'city': field.miejscowosc, 'fieldId': field.idBoiska }  ) }}">Rezerwuj</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

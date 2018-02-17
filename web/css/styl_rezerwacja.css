@@ -1,0 +1,158 @@
+/* default styles ------------------ */
+* {
+    margin:0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0;
+    font: 16px Verdana;
+    line-height:1.6;
+    background: #002020;
+	color: white;
+}
+
+header{
+	font-size:22px;
+	text-align:center;
+	color:white;
+	padding-top:30px;
+	padding-bottom:50px;
+	background: #001919;
+}
+
+
+
+.tekst{
+	aling:center;
+}
+
+
+form div{
+	margin: 3px auto;
+}
+.textInput{
+	margin-top: 2px;
+	height: 28px;
+	border: 1px solid #5E6E66;
+	font-size: 16px;
+	padding: 1px;
+	width: 100%;
+
+}
+.btn{
+	padding: 7px;
+	width: 100%;
+}
+.val_error{
+	color: #FF1F1F;
+}
+
+
+
+caption{
+	caption-side:top;
+}
+
+.reg{
+	width: 35%;
+	margin: 50px auto;
+	padding: 20px;
+background: #EFFFE0;
+}
+p,textarea{border:1px solid #bbb;padding:1em;width:75%}
+
+
+
+a {
+	text-decoration:none;
+	color: #F4AA37;
+}
+
+a:hover {
+	color: #fff;
+}
+
+.lista1{
+	margin:auto;
+	width: 1000px;
+	text-align:center;
+
+}
+.obr2{
+	width: 90px;
+	height: 175px;
+	padding-top:7px;
+}
+
+.lista1 a{
+	text-decoration:none;
+	color:green;
+
+}
+/*.lista1 a:hover{
+	color: white;
+}
+*/
+.lista1 p:hover{
+	color: white;
+}
+.lista1 tr td img {
+	width: 125px;
+	height: 175px;
+}
+
+
+.img1{
+	display:inline-block;
+	width:33%;
+	float:left;
+	margin-bottom:10px;
+}
+
+.reszta{
+	float:left;
+	width:64%;
+	margin-left:1%;
+}
+
+.reszta table{
+	width:100%;
+}
+
+.reszta td{
+	height:2em;
+	padding-left:10px;
+	padding-right:10px;
+}
+.kuniec{
+	clear:both;
+}
+
+.kuniec table{
+	width:100%;
+}
+
+.kuniec td{
+	height:2em;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.komorka{
+	padding-top:3px;
+	padding-bottom:10px;
+	padding-left:7px;
+	padding-right: 7px;
+	
+}
+
+
+
+
+
+
+
+
+
+

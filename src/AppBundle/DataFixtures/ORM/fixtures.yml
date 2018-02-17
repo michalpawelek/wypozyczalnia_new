@@ -1,0 +1,18 @@
+AppBundle\Entity\Boiska:
+  boiska_{1..10}:
+    Typ: <boisko()>
+    CenaGodzina: <numberBetween(50,300)>
+    Miejscowosc: <pl_PL:city()>
+    Ulica: <pl_PL:lastName()>
+    Numer: <numberBetween(1,400)>
+    Img: <name()>
+
+AppBundle\Entity\Uzytkownicy:
+  uzytkownicy_{1..10}:
+    login: <pl_PL:username()>
+    haslo: admin
+    email: <pl_PL:email()>
+    imie: <pl_PL:firstName()>
+    nazwisko: <pl_PL:lastName()>
+    telefon: 123123123
+    roles: []

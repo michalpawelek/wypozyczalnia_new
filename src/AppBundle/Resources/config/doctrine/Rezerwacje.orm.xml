@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Rezerwacje" table="rezerwacje">
+    <indexes>
+      <index name="id_uzytkownicy" columns="id_uzytkownik"/>
+      <index name="id_boiska" columns="id_boiska"/>
+    </indexes>
+    <id name="idRezerwacje" type="integer" column="id_rezerwacje">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dataWypozyczenia" type="datetime" column="data_wypozyczenia" nullable="true"/>
+    <field name="dataOddania" type="datetime" column="data_oddania" nullable="true"/>
+    <field name="oplata" type="integer" column="oplata" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idUzytkownik" target-entity="Uzytkownicy" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_uzytkownik" referenced-column-name="id_uzytkownik"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idBoiska" target-entity="Boiska" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_boiska" referenced-column-name="id_boiska"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

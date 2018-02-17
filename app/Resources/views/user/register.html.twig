@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+<div class="login-page">
+    <div class="start_napis">Stwórz nowe konto!</div>
+    <div class="form">
+        {{ form_start(form) }}
+        {{ form_row(form.login) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword.first, {
+            'label': 'Hasło'
+        }) }}
+        {{ form_row(form.plainPassword.second, {
+            'label': 'Powtórz hasło'
+        }) }}
+        {{ form_row(form.imie) }}
+        {{ form_row(form.nazwisko) }}
+        {{ form_row(form.telefon) }}
+        <button type="submit" class="btn btn-default">Rejestruj</button>
+        {{ form_end(form) }}
+        <p class="message">Masz konto? <a href="{{ path('security_login') }}">Zaloguj się</a></p>
+    </div>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

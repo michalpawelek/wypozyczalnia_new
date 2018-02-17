@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Boiska" table="boiska">
+    <id name="idBoiska" type="integer" column="id_boiska">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="miejscowosc" type="string" column="miejscowosc" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="ulica" type="string" column="ulica" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="numer" type="integer" column="numer" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="typ" type="string" column="typ" length="32" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="cenaGodzina" type="integer" column="cena_godzina" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="img" type="string" column="img" length="200" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

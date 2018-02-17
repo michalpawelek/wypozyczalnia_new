@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Twoje Rezerwacje</h1>
+    {% for field in fields %}
+        <a href="{{ path('user_reservation_field', { 'fieldId': field.idBoiska}) }}">{{ field.miejscowosc }}, ul {{ field.ulica }} {{ field.numer }}, typ: {{ field.typ }}</a>
+
+    {% endfor %}
+{% endblock %}

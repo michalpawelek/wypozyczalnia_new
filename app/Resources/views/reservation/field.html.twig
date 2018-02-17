@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set time = "now"|date("U") %}
+    <h1>Boisko</h1>
+    <p>Typ boiska: {{ field.typ }}</p>
+    <p>Adres: {{ field.miejscowosc}}, ul {{ field.ulica }} {{ field.numer }}</p>
+    <p>Cena/h: {{ field.cenaGodzina}}zł</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th colspan="7" class="center">
+                {{ time|date('F') }}
+            </th>
+        </tr>
+        <tr>
+            <th width="12%">Sunday</th>
+            <th width="15%">Monday</th>
+            <th width="15%">Tuesday</th>
+            <th width="16%">Wednesday</th>
+            <th width="15%">Thursday</th>
+            <th width="15%">Friday</th>
+            <th width="12%">Saturday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% set daysInMonth = time|date('t') %}
+            {% set startDow = time|date('F 1\\s\\t Y')|date('w') %}
+            {% set dow = startDow %}
+            {% for day in range(1,daysInMonth) %}
+            {% if loop.first and startDow != 0 %}
+                <td colspan="{{ startDow }}"></td>
+            {% endif %}
+            <td>
+                <div>
+                    {% if day == "now"|date('d') %}
+                    <div>
+                        <b>
+                            <a href="{{ path('reservation_day', {
+                                'city': field.miejscowosc,
+                                'fieldId': field.idBoiska,
+                                'date': "now"|date("U"),
+                            }) }}">{{ day }}</a>
+                        </b>
+                    </div>
+                    {% else %}
+                    <div>
+                        {% if day > "now"|date('d') %}
+                        <a href="{{ path('reservation_day', {
+                            'city': field.miejscowosc,
+                            'fieldId': field.idBoiska,
+                            'date': "now"|date_modify('+'~(day - "now"|date('d'))~' day')|date("U")
+                        }) }}">{{ day }}</a>
+                        {% else %}
+                            {{ day }}
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </td>
+            {% if loop.last and dow != 6 %}
+                <td colspan="{{ 6 - dow }}">&nbsp;</td>
+            {% endif %}
+            {% if dow == 6 %}
+            {% set dow = 0 %}
+        </tr>
+        <tr>
+            {% else %}
+                {% set dow = dow + 1 %}
+            {% endif %}
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

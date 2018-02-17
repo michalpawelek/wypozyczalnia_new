@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Miasta</h1>
+    <ul>
+        {% for city in cities %}
+            <li>
+                <a href="{{ path('reservation_city', { 'city': city }) }}">{{ city }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

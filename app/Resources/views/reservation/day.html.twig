@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>Rezerwacja w dniu {{ date|date('d/m/Y') }}</div>
+    <div class="list-group">Rezerwacja w dniu {{ date|date('d/m/Y') }}. Wybierz interesujące Cię godziny
+
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button>Rezerwuj!!</button>
+    <button class="list-group-item">Rezerwuj!!</button>
     {{ form_end(form) }}
+    </div>
 {% endblock %}

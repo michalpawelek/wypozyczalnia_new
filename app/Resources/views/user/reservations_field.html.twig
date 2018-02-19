@@ -3,12 +3,14 @@
 {% block body %}
     <h1>Twoje Rezerwacje</h1>
     <h2>Na boisku: {{ field.miejscowosc }}, ul {{ field.ulica }} {{ field.numer }}, typ: {{ field.typ }}</h2>
+    <div class="list-group-item">
     {% for reservation in reservations %}
         <div>
             <div>#{{ loop.index }}</div>
-            <div>Data wypożyczenia: {{ reservation.data_wypozyczenia|date('d/m/Y') }}</div>
+            <div>Data wypożyczenia: {{ reservation.data_wypozyczenia|date('d/m/Y') }} </div>
             <div>Godzina wypożyczenia: {{ reservation.data_wypozyczenia|date('H') }}:00</div>
             <div>Godzina oddania: {{ reservation.data_oddania|date('H') }}:00</div>
+        </div>
         </div>
         <br/>
     {% endfor %}

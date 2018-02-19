@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <a href="{{ path('admin_add_field') }}">Dodaj nowe boisko</a>
+    <div>
+        <h1>Panel admina</h1>
+        <a href="{{ path('admin_add_field') }}" class="list-group-item">Dodaj nowe boisko</a>
+        <a href="{{ path('admin_add_field') }}" class="list-group-item">Usuń istniejące boisko</a>
+    </div>
 {% endblock %}
+

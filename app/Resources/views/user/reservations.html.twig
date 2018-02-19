@@ -2,8 +2,9 @@
 
 {% block body %}
     <h1>Twoje Rezerwacje</h1>
+    <div class="list-group">
     {% for field in fields %}
-        <a href="{{ path('user_reservation_field', { 'fieldId': field.idBoiska}) }}">{{ field.miejscowosc }}, ul {{ field.ulica }} {{ field.numer }}, typ: {{ field.typ }}</a>
-
+        <a href="{{ path('user_reservation_field', { 'fieldId': field.idBoiska}) }}" class="list-group-item">{{ field.miejscowosc }}, ul {{ field.ulica }} {{ field.numer }}, typ: {{ field.typ }}</a>
     {% endfor %}
+    </div>
 {% endblock %}

@@ -1,22 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
+    <div class="list-group">
         Witaj {{ uzytkownik.login }}
     </div>
-    <div>
-        Twoje dane:
-    </div>
-    <ul>
-        <li>Login: {{ uzytkownik.login }}</li>
-        <li>Imie: {{ uzytkownik.imie }}</li>
-        <li>Nazwisko: {{ uzytkownik.nazwisko }}</li>
-        <li>Nr telefonu: {{ uzytkownik.telefon }}</li>
-        <li>Email: {{ uzytkownik.email }}</li>
+
+    <ul class="list-group-item">
+
+        <li class="list-group">Login: {{ uzytkownik.login }}</li>
+        <li class="list-group">Imie: {{ uzytkownik.imie }}</li>
+        <li class="list-group">Nazwisko: {{ uzytkownik.nazwisko }}</li>
+        <li class="list-group">Nr telefonu: {{ uzytkownik.telefon }}</li>
+        <li class="list-group">Email: {{ uzytkownik.email }}</li>
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('admin_index') }}">Panel admina</a>
+            <a href="{{ path('admin_index') }}" class="list-group-item">Panel admina</a>
         {% endif %}
-        <a href="{{ path('user_reservation') }}">Moje Rezerwacje</a>
+        <a href="{{ path('user_reservation') }}" class="list-group-item" color="red">Moje Rezerwacje</a>
     </ul>
     <div>
         Wyloguj się: <a href="{{ path('security_logout') }}" class="btn btn-primary">Klik!</a>

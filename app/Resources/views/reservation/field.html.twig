@@ -2,11 +2,14 @@
 
 {% block body %}
     {% set time = "now"|date("U") %}
-    <h1>Boisko</h1>
-    <p>Typ boiska: {{ field.typ }}</p>
-    <p>Adres: {{ field.miejscowosc}}, ul {{ field.ulica }} {{ field.numer }}</p>
-    <p>Cena/h: {{ field.cenaGodzina}}zł</p>
-
+    <h1>Wybierz interesujący Cię termin w kalendarzu</h1>
+    <ul class="list-group">
+        <li class="list-group-item">
+        <p>Typ boiska: {{ field.typ }}</p>
+        <p>Adres: {{ field.miejscowosc}}, ul {{ field.ulica }} {{ field.numer }}</p>
+        <p>Cena/h: {{ field.cenaGodzina}}zł</p>
+        </li>
+    </ul>
     <table>
         <thead>
         <tr>
@@ -74,4 +77,5 @@
         </tr>
         </tbody>
     </table>
+
 {% endblock %}

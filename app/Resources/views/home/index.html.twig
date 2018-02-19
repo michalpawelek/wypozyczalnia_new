@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <a href="{{ path('security_login') }}">logowanie</a>
-    <a href="{{ path('user_registration') }}">rejestracja</a>
-    <a href="{{ path('reservation_index') }}">Rezerwacja</a>
-    <a href="{{ path('user_account') }}">Konto</a>
+    <div class="list-group">
+
+
+        <a href="{{ path('reservation_index') }}" class="list-group-item">Rezerwacja</a>
+        <a href="{{ path('user_account') }}" class="list-group-item">Konto</a>
+
+    </div>
 {% endblock %}

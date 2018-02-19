@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Miasta</h1>
-    <ul>
+    <h1>Wybierz miasto, w którym chcesz dokonać rezerwacji</h1>
+    <div class="list-group">
         {% for city in cities %}
-            <li>
-                <a href="{{ path('reservation_city', { 'city': city }) }}">{{ city }}</a>
-            </li>
+
+                <a href="{{ path('reservation_city', { 'city': city }) }}" class="list-group-item">{{ city }}</a>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

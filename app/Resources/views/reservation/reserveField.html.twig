@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="list-group">
     <h1>Dziekujemy za rezerwacje w dniu {{ reservations[0].data_wypozyczenia|date('d/m/Y') }}</h1>
     <div>Rezerwacje godzinowe:</div>
-
-
+        <li class="list-group-item">
     {% for reservation in reservations %}
         <br/>
         <div>
@@ -16,6 +16,7 @@
     {% endfor %}
 
     <div>Całkowity koszt rezerwacj: {{ cash }}zł</div>
-
-    <a href="{{ path('user_account') }}">Powrót do konta</a>
+        </li>
+    <a href="{{ path('user_account') }}" class="list-group-item">Powrót do konta</a>
+    </div>
 {% endblock %}
